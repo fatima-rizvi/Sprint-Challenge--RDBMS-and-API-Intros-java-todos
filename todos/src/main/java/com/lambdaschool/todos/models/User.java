@@ -49,7 +49,7 @@ public class User extends Auditable
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     @JsonIgnoreProperties(value = "user", allowSetters = true)
-    private List<Todos> todos = new ArrayList<>();
+    private List<Todo> todos = new ArrayList<>();
 
     /**
      * Default constructor used primarily by the JPA.
@@ -169,11 +169,11 @@ public class User extends Auditable
         this.password = password;
     }
 
-    public List<Todos> getTodos() {
+    public List<Todo> getTodos() {
         return todos;
     }
 
-    public void setTodos(List<Todos> todos) {
+    public void setTodos(List<Todo> todos) {
         this.todos = todos;
     }
 }

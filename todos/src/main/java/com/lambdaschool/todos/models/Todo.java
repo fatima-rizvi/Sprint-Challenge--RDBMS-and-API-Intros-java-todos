@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "todos")
-public class Todos extends Auditable {
+public class Todo extends Auditable {
     //Primary key id, not null, long of the todos table
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,13 +26,19 @@ public class Todos extends Auditable {
     private User user;
 
     //Empty constructor for JPA
-    public Todos() {
+    public Todo() {
     }
 
-    public Todos(User user, String description) {
+    public Todo(User user, String description) {
         this.user = user;
         this.description = description;
         this.completed = false;
+    }
+
+    public Todo(User user, String description, boolean completed) {
+        this.user = user;
+        this.description = description;
+        this.completed = completed;
     }
 
     public long getTodoid() {
