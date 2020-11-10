@@ -1748,9 +1748,25 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Can you explain your data model, data schema to me?
+    I created models for both todos and user. Both of the tables made from these models 
+    have a primary key that I use to connect them through their One-to-Many and 
+    Many-to-One relationships. I make sure to avoid duplication by using the 
+    JsonIgnoreProperties annotation. I also turned cascading on. Because Java is strictly 
+    typed, I declare the data type every time I have to. 
 2. Can you explain how you connected your API to a database?
+    The models represent the way the data is stored in the database and the services can 
+    manipulate the data. The repositories are able to access the database by extending the 
+    CRUD repository.
 3. Can you explain the flow of data from client through the backend system and back to the client?
+    The client will send a request to the system that goes to a controller. Based on which 
+    path the client gave, the controller with access a service and call a method. The service 
+    with go to its respective implementation class that has the method and the method will run.
+    The information is returned to the controller which will send any necessary information
+    back to the client.
 4. How did you handle querying in your application: custom querying vs JPA Querying?
+    I mostly used JPA querying for this application as I was able to use many of the 
+    standard querying and data manipulation methods (such as fundAll() and delete())
+    to create the mehtods I needed.
 
 ## Instructions
 
